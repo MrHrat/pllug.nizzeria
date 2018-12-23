@@ -8,10 +8,7 @@ namespace Nizzeria.Class.TypesOfPizza
 {
     public class Italian : Pizza
     {
-        public Italian()
-        {
-            Description = "Pizza Italian";
-        }
+        public Italian() : base("Pizza Italian") { }
 
         public override double Cost()
         {

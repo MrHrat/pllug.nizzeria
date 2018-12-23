@@ -8,10 +8,7 @@ namespace Nizzeria.Class.TypesOfPizza
 {
     public class NewYork : Pizza
     {
-        public NewYork()
-        {
-            Description = "Pizza New-York";
-        }
+        public NewYork() : base("Pizza New-York") { }
 
         public override double Cost()
         {

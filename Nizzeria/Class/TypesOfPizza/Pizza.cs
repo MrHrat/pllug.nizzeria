@@ -21,6 +21,11 @@ namespace Nizzeria.Class.TypesOfPizza
             return _description;
         }
 
+        public Pizza(string Name)
+        {
+            _description = Name;
+        }
+
         public abstract double Cost();
     }
 }
