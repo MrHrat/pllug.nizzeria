@@ -12,5 +12,10 @@ namespace Nizzeria.Class.Ingredients
         public Pizza pizza;
         public abstract override string GetDescription();
         public abstract override double Cost();
+
+        public DecoratorForPizza(Pizza pizza)
+        {
+            this.pizza = pizza;
+        }
     }
 }

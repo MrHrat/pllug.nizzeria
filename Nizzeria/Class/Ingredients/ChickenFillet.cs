@@ -9,10 +9,7 @@ namespace Nizzeria.Class.Ingredients
 {
     public class ChickenFillet : DecoratorForPizza
     {
-        public ChickenFillet(Pizza pizza)
-        {
-            this.pizza = pizza;
-        }
+        public ChickenFillet(Pizza pizza) : base(pizza) { }
 
         public override string GetDescription()
         {

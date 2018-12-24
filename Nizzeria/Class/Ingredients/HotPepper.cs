@@ -9,10 +9,7 @@ namespace Nizzeria.Class.Ingredients
 {
     public class HotPepper : DecoratorForPizza
     {
-        public HotPepper(Pizza pizza)
-        {
-            this.pizza = pizza;
-        }
+        public HotPepper(Pizza pizza) : base(pizza) { }
 
         public override string GetDescription()
         {
