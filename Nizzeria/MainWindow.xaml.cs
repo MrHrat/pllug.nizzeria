@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Nizzeria.Class;
+using Nizzeria.Class.Ingredients;
+using Nizzeria.Class.TypesOfPizza;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,33 @@ namespace Nizzeria
     /// </summary>
     public partial class MainWindow : Window
     {
+        ViewModel ViewModelControl;
+
         public MainWindow()
         {
             InitializeComponent();
+            ViewModelControl = new ViewModel();
+            DataContext = ViewModelControl;
+        }
+
+        private void Run_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(ViewModelControl.SelectedPizza.GetDescription() + "    " + ViewModelControl.SelectedPizza.Cost());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModelControl.AddPizza();
+        }
+
+        private void Button_Click_Ing(object sender, RoutedEventArgs e)
+        {
+            ViewModelControl.AddIngredient();
+        }
+
+        private void Button_Click_ShowPizza(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

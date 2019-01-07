@@ -63,6 +63,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Class\Converter\PizzaToDescriptionStringConverter.cs" />
+    <Compile Include="Class\Ingredients\Cheese.cs" />
+    <Compile Include="Class\Ingredients\ChickenFillet.cs" />
+    <Compile Include="Class\Ingredients\DecoratorForPizza.cs" />
+    <Compile Include="Class\Ingredients\Ham.cs" />
+    <Compile Include="Class\Ingredients\HotPepper.cs" />
+    <Compile Include="Class\TypesOfPizza\American.cs" />
+    <Compile Include="Class\TypesOfPizza\Chicago.cs" />
+    <Compile Include="Class\TypesOfPizza\Italian.cs" />
+    <Compile Include="Class\TypesOfPizza\NewYork.cs" />
+    <Compile Include="Class\TypesOfPizza\NullPizza.cs" />
+    <Compile Include="Class\TypesOfPizza\Pizza.cs" />
+    <Compile Include="Class\ViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -94,5 +107,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

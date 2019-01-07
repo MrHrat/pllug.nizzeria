@@ -3,10 +3,40 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:classconverter="clr-namespace:Nizzeria.Class.Converter"
         xmlns:local="clr-namespace:Nizzeria"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Width="600" SizeToContent="WidthAndHeight" >
+    <Window.Resources>
+        <classconverter:PizzaToDescriptionStringConverter x:Key="PizzaToDescriptionStringConverter"/>
         
-    </Grid>
+        <DataTemplate x:Key="Params">
+            <StackPanel>
+                <TextBlock Text="{Binding Path=Description}" Margin= "2 5 2 2"/>                
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <DockPanel LastChildFill="True">
+        <Button x:Name="Run" DockPanel.Dock="Bottom"  Content="Show" Click="Run_Click" />
+        <StackPanel Orientation="Horizontal">
+            <ItemsControl Margin ="15">
+                <TextBlock Text="Select the type of Pizza:" Margin="10 0 10 10"/>
+                <ComboBox ItemsSource="{Binding NamePizzas}" SelectedItem="{Binding SelectedTypePizza}" Margin="0 0 0 10"/>
+                <Button Content="Add" Margin="0 0 0 20" Click="Button_Click"/>
+                <ListBox Height="230" ItemsSource="{Binding Pizzas}" SelectedItem="{Binding SelectedPizza, UpdateSourceTrigger=PropertyChanged}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource PizzaToDescriptionStringConverter}}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ItemsControl>            
+            <ItemsControl Margin ="15">
+                <TextBlock Text="Select the Ingredients:" Margin="10 0 10 10"/>
+                <ListBox ItemsSource="{Binding NameIngredients}" SelectedItem="{Binding SelectedTypeIngredient, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 0 20" Height="220"/>
+                <Button Content="Add" Margin="0 0 0 20" Click="Button_Click_Ing"/>
+            </ItemsControl>
+        </StackPanel>
+    </DockPanel>
 </Window>
