@@ -8,24 +8,17 @@ namespace Nizzeria.Class.TypesOfPizza
 {
     public abstract class Pizza
     {
-        private string _description = "Unknown Pizza";
-        public string Description
-        {
-            set
-            {
-                _description = value;
-            }
-        }
+        public string Description { set; get; } = "Unknown Pizza";
         public virtual string GetDescription()
         {
-            return _description;
+            return Description;
         }
 
         public Pizza() { }
 
         public Pizza(string Name)
         {
-            _description = Name;
+            Description = Name;
         }
 
         public abstract double Cost();
